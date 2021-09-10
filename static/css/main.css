@@ -1,0 +1,63 @@
+.container{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+body{
+    background-color: black;
+}
+
+.card{
+    background-color:aliceblue;
+    min-height:500px;
+    min-width:240px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.card:hover{
+    cursor:pointer;
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+
+h2{
+    text-align: center;
+}
+
+a{
+    background-color:black;
+    color:white;
+    padding:15px 10px;
+    display: block;
+    margin:10px 50px ;
+    border-radius: 10px;
+    position: absolute;
+    bottom:0;
+}
+
+.card-image{
+    background-color:aqua;
+    height:150px;
+    min-width: 220px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.img1{
+    background-image: url('../images/下載.jpg');
+}
+
+.img2{
+    background-image: url('../images/下載.jpg');
+}
+
+.img3{
+    background-image: url('../images/下載.jpg');
+}
+
+.unlisted-item{
+    padding-top:10px;
+}

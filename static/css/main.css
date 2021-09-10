@@ -3,19 +3,42 @@
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
+    /*outline: 2px solid black;*/
+    margin-top: 150px;
+}
+
+.title{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
 }
 #snow-sensei-title{
-    color:white;
-    text-align:center;
+    color:black;
+    background-color: white;
+    padding-left:10px;
+    padding-right:10px;
+    position:absolute;
+    border-radius: 5px;
 }
+#team{
+    position:relative;
+    left:500px;
+    bottom:0px;
+    outline: 1px solid black;
+    margin-top: 90px
+}
+
 body{
-    background-color: black;
+    background-color: rgba(50,155,255);
+    background-image: url('../images/mountain.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .card{
     background-color:aliceblue;
     min-height:500px;
-    min-width:240px;
+    min-width:300px;
     margin: 10px;
     border-radius: 15px;
 }
@@ -50,15 +73,15 @@ a{
 }
 
 .img1{
-    background-image: url('../images/下載.jpg');
+    background-image: url('../images/skiresort.jpg');
 }
 
 .img2{
-    background-image: url('../images/下載.jpg');
+    background-image: url('../images/skiresort.jpg');
 }
 
 .img3{
-    background-image: url('../images/下載.jpg');
+    background-image: url('../images/skiresort.jpg');
 }
 
 .unlisted-item{

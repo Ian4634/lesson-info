@@ -4,7 +4,10 @@
     flex-wrap: wrap;
     position: relative;
 }
-
+#snow-sensei-title{
+    color:white;
+    text-align:center;
+}
 body{
     background-color: black;
 }

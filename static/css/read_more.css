@@ -1,0 +1,35 @@
+body{
+    background-image: url('../images/mountain.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:1200px;
+}
+
+.container1{
+    display:flex;
+    background-color:bisque;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:0;
+    justify-content:center;
+    border-radius: 10px;
+}
+.title{
+    position:relative
+}
+#home{
+    position:absolute;
+    right:100px;
+}
+.container2{
+
+    background-color:aquamarine;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:0;
+    text-align:center;
+    border-radius: 10px;
+    height:auto;
+    padding-top:10px;
+    padding-bottom:10px;
+}

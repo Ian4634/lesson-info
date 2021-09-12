@@ -4,6 +4,13 @@
     <link rel="stylesheet" href = '{% static "css/main.css" %}'>
 </head>
 {% block content %}
+    <select name="forma" onchange="location = this.value;">
+    <!--這裡下面可以用for-->
+    <option value="Contact.php">所有課程</option>
+    <option value="?filter=自滑">自滑</option>
+    <option value="?filter=女力">女力</option>
+    <option value="?filter=其他">其他</option>
+   </select>
     <div class="title">
         <h1 id = 'snow-sensei-title'>Snow Sensei 課程資訊</h1>
         <h3 id = 'team'><a href="{% url 'official_use:add_lesson'%}" class="a-team">Team</a></h3>
@@ -18,7 +25,7 @@
                 <li class="unlisted-item">時間:{{lesson.start_time}}-{{lesson.end_time.time}}</li>
                 <li class="unlisted-item">地點:{{lesson.location}}</li>
             </ul>
-            <a href = '#'>READ MORE</a>
+            <a href = '{% url "mainpages:read_more" lesson.id %}'>READ MORE</a>
         </div>
         {% endfor %}
     </section>

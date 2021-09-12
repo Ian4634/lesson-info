@@ -28,6 +28,7 @@
     margin-top: 90px
 }
 
+
 body{
     background-color: rgba(50,155,255);
     background-image: url('../images/mountain.jpg');
@@ -86,4 +87,10 @@ a{
 
 .unlisted-item{
     padding-top:10px;
+    margin-right: 10px;
 }
+
+ul{
+    margin-right: 10px;
+}
+

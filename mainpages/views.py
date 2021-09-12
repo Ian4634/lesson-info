@@ -1,13 +1,25 @@
 from django.shortcuts import render
-from official_use.models import Lesson
+from official_use.models import Lesson, Category
 from django.http import HttpResponse
+from . import my_funcs
 # Create your views here.
 def home(request):
+    categories = [ category.name for category in Category.objects.all()]
+    if 'filter' in request.GET:
+        for category in categories:
+            if request.GET.get('filter') == category:
+                context = {
+                    'lessons':my_funcs.get_data(category),
+                    'category':category,
+                }
+                return render(request, 'home.html', context)
+    
     lessons = Lesson.objects.all()
     lesson_length = len(lessons)
     context = {
         'lessons':lessons,
         'lesson_length':lesson_length,
+        'categories':categories,
     }
     return render(request, 'home.html', context)
 

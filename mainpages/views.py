@@ -14,7 +14,7 @@ def home(request):
                 }
                 return render(request, 'home.html', context)
     
-    lessons = Lesson.objects.all()
+    lessons = Lesson.objects.all().order_by('start_time')
     lesson_length = len(lessons)
     context = {
         'lessons':lessons,

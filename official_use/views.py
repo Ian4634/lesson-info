@@ -3,6 +3,9 @@ from .forms import LessonForm, CategoryForm
 from .models import Lesson
 from django.http import HttpResponseRedirect, HttpResponse
 # Create your views here.
+
+def official_home(request):
+    return render(request, 'official_home.html')
 def add_lesson(request):
     if request.method == 'POST':
         form = LessonForm(request.POST, request.FILES)

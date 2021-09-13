@@ -1,0 +1,102 @@
+.container{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    /*outline: 2px solid black;*/
+    margin-top: 150px;
+}
+
+.title{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+#snow-sensei-title{
+    color:black;
+    background-color: white;
+    padding-left:10px;
+    padding-right:10px;
+    position:absolute;
+    border-radius: 5px;
+}
+#team{
+    position:relative;
+    left:500px;
+    bottom:0px;
+    outline: 1px solid black;
+    margin-top: 90px
+}
+
+.add-lesson{
+    position:relative;
+    left:470px;
+    bottom:0px;
+    outline: 1px solid black;
+    margin-top: 90px
+}
+body{
+    background-color: rgba(50,155,255);
+    background-image: url('../images/mountain.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card{
+    background-color:aliceblue;
+    min-height:500px;
+    min-width:300px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.card:hover{
+    cursor:pointer;
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+
+h2{
+    text-align: center;
+}
+
+.a1{
+    background-color:black;
+    color:white;
+    padding:15px 10px;
+    display: block;
+    margin:10px 50px ;
+    border-radius: 10px;
+    position: absolute;
+    bottom:0;
+}
+
+.card-image{
+    background-color:aqua;
+    height:150px;
+    min-width: 220px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.img1{
+    background-image: url('../images/nigt.jpg');
+}
+
+.img2{
+    background-image: url('../images/nigt.jpg');
+}
+
+.img3{
+    background-image: url('../images/nigt.jpg');
+}
+
+.unlisted-item{
+    padding-top:10px;
+    margin-right: 10px;
+}
+
+ul{
+    margin-right: 10px;
+}
+

@@ -1,14 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base_page.html' %}
+{% load static %}
+{% load my_tags %}
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href = '{% static "css/official_page.css" %}'>
 </head>
-<body>
-    <h1>官方增修</h1>
-    <h3><a href = '{% url "official_use:add_lesson" %}'>新增課程</a></h3>
-    <h3><a href = '{% url "official_use:add_hashtag" %}'>新增類別</a></h3>
-</body>
-</html>
+{% block content %}
+    <select name="forma" onchange="location = this.value;">
+        <option value="">課程類型</option>
+        <option value="{% url 'official_use:official_home' %}">所有課程</option>
+    <!--這裡下面可以用for-->
+    {% for category in categories %}
+    <option value="?filter={{category}}">{{category}}</option>
+    {% endfor %}
+    <option value="{% url 'official_use:add_hashtag' %}">新增類別</option>
+    <option value="{% url 'official_use:delete_hashtag' %}">刪除類別</option>
+   </select>
+   
+
+    <div class="title">
+        <h1 id = 'snow-sensei-title'>編輯課堂資訊{% if category != None%}（{{category}}）{%endif%}</h1>
+        <h3 id = 'team'><a href="{% url 'mainpages:home'%}" id="a-team">Home</a></h3>
+        <h3 id = 'add-lesson'><a href="{% url 'official_use:add_lesson'%}" id="a-team">新增課程</a></h3>
+    </div>
+    
+    <section class = 'container'>
+        {% for lesson in lessons %}
+        <div class = 'card'>
+            <div class="img1 card-image"></div>
+            <h2>{{lesson.name}}</h2>
+            <ul style = 'margin-right:10px'>
+                <li  class="unlisted-item">課堂名稱:{% get_filename lesson.image.url %}</li>
+                <li class="unlisted-item">時間:{{lesson.start_time}}-{{lesson.end_time.time}}</li>
+                <li class="unlisted-item">地點:{{lesson.location}}</li>
+            </ul>
+            <a clss = 'a1' href = '{% url "official_use:delete_lesson" lesson.id %}'>DELETE</a>
+        </div>
+        {% endfor %}
+    </section>
+{% endblock%}

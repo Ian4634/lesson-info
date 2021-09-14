@@ -28,9 +28,14 @@
     
     <section class = 'container'>
         {% for lesson in lessons %}
+        {% get_filename lesson.image.url as image %}
         <div class = 'card'>
             <div class="card-image">
-                <div class="img1"></div>
+                <div style = "
+                    background-image: url('../media/images/lessonimage/{{image}}');
+                    height:150px;
+                    border-radius:15px;
+                "></div>
             </div>
             
             <h2>{{lesson.name}}</h2>

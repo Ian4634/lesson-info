@@ -73,19 +73,9 @@ a{
     border-radius: 15px;
 }
 
-.img1{
-    background-image: url('../images/nigt.jpg');
-    height:150px;
-    border-radius:15px;
-}
 
-.img2{
-    background-image: url('../images/nigt.jpg');
-}
 
-.img3{
-    background-image: url('../images/nigt.jpg');
-}
+
 
 .unlisted-item{
     padding-top:10px;

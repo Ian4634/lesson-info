@@ -28,13 +28,7 @@
     margin-top: 90px
 }
 
-.add-lesson{
-    position:relative;
-    left:470px;
-    bottom:0px;
-    outline: 1px solid black;
-    margin-top: 90px
-}
+
 body{
     background-color: rgba(50,155,255);
     background-image: url('../images/mountain.jpg');
@@ -60,7 +54,7 @@ h2{
     text-align: center;
 }
 
-.a1{
+a{
     background-color:black;
     color:white;
     padding:15px 10px;
@@ -74,22 +68,14 @@ h2{
 .card-image{
     background-color:aqua;
     height:150px;
-    min-width: 220px;
+    min-width: 324px;
     margin-bottom: 15px;
     border-radius: 15px;
 }
 
-.img1{
-    background-image: url('../images/nigt.jpg');
-}
 
-.img2{
-    background-image: url('../images/nigt.jpg');
-}
 
-.img3{
-    background-image: url('../images/nigt.jpg');
-}
+
 
 .unlisted-item{
     padding-top:10px;
@@ -100,3 +86,11 @@ ul{
     margin-right: 10px;
 }
 
+#add-lesson-section{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    /*outline: 2px solid black;*/
+    margin-top: 50px;
+}

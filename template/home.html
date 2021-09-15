@@ -14,15 +14,27 @@
     {% endfor %}
    </select>
    
-eee
+
     <div class="title">
         <h1 id = 'snow-sensei-title'>Snow Sensei 課程資訊{% if category != None%}（{{category}}）{%endif%}</h1>
         <h3 id = 'team'><a href="{% url 'official_use:official_home'%}" class="a-team">Team</a></h3>
     </div>
     <section class = 'container'>
+        <style>
+            .bkgdImage{
+                height:150px;
+                width:100%;
+                    border-radius:15px;
+                    background-position: center;
+                    background-size: cover;
+            }
+        </style>
         {% for lesson in lessons %}
-        <div class = 'card'>
-            <div class="img1 card-image"></div>
+        {% get_filename lesson.image.url as image %}
+        <div class = "col-sm-12 col-md-6 col-lg-3 col-xl-3" style="background-color:white;height:450px;margin:10px 5px;border-radius:15px">
+            <div class="">
+                <div class="bkgdImage" style = "background-image: url('../media/images/lessonimage/{{image}}');"></div>
+            </div>
             <h2>{{lesson.name}}</h2>
             <ul style = 'margin-right:10px'>
                 <li  class="unlisted-item">課堂名稱:{% get_filename lesson.image.url %}</li>

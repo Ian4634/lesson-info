@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href = '{% static "css/official_page.css" %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </head>
 <body>
     <select name="forma" onchange="location = this.value;">
@@ -27,29 +30,34 @@
     </div>
     
     <section class = 'container'>
+        <style>
+            .bkgdImage{
+                height:150px;
+                width:100%;
+                    border-radius:15px;
+                    background-position: center;
+                    background-size: cover;
+            }
+        </style>
         {% for lesson in lessons %}
         {% get_filename lesson.image.url as image %}
-        <div class = 'card'>
-            <div class="card-image">
-                <div style = "
-                    background-image: url('../media/images/lessonimage/{{image}}');
-                    height:150px;
-                    border-radius:15px;
-                "></div>
+        <div class = "col-sm-12 col-md-6 col-lg-3 col-xl-3" style="background-color:white;height:450px;margin:10px 5px;border-radius:15px">
+            <div class="">
+                <div class="bkgdImage" style = "background-image: url('../media/images/lessonimage/{{image}}');"></div>
             </div>
             
             <h2>{{lesson.name}}</h2>
-            <ul style = 'margin-right:10px'>
+            <ul style="margin-right:10px">
                 <li  class="unlisted-item">課堂名稱:{% get_filename lesson.image.url %}</li>
                 <li class="unlisted-item">時間:{{lesson.start_time}}-{{lesson.end_time.time}}</li>
                 <li class="unlisted-item">地點:{{lesson.location}}</li>
             </ul>
-            <a clss = 'a1' href = '{% url "official_use:delete_lesson" lesson.id %}'>DELETE</a>
+            <a class="btn btn-primary" href ='{% url "official_use:delete_lesson" lesson.id %}'>DELETE</a>
         </div>
         {% endfor %}
     </section>
     <section id = 'add-lesson-section'>
-        <h3><a href="{% url 'official_use:add_lesson'%}">新增課程</a></h3>
+        <h3><a class="btn btn-primary" href="{% url 'official_use:add_lesson'%}">新增課程</a></h3>
     </section>
 </body>
     

@@ -26,7 +26,7 @@
 
     <div class="title">
         <h1 id = 'snow-sensei-title'>編輯課堂資訊{% if category != None%}（{{category}}）{%endif%}</h1>
-        <h3 id = 'team'><a href="{% url 'mainpages:home'%}">Home</a></h3>
+        <a href="{% url 'mainpages:home'%}" class = "btn btn-secondary" style="position:relative;left:40%" >Home</a>
     </div>
     
     <section class = 'container'>
@@ -41,7 +41,7 @@
         </style>
         {% for lesson in lessons %}
         {% get_filename lesson.image.url as image %}
-        <div class = "col-sm-12 col-md-6 col-lg-3 col-xl-3" style="background-color:white;height:450px;margin:10px 5px;border-radius:15px">
+        <div class = "col-sm-12 col-md-6 col-lg-3 col-xl-3" style="background-color:white;width:350px;height:450px;margin:10px 5px;border-radius:15px">
             <div class="">
                 <div class="bkgdImage" style = "background-image: url('../media/images/lessonimage/{{image}}');"></div>
             </div>

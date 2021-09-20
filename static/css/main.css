@@ -61,9 +61,12 @@ a{
     display: block;
     margin:10px 50px ;
     border-radius: 10px;
-    position: absolute;
+    position: relative;
     bottom:0;
+    left:300%;
+    width:fit-content;
 }
+
 
 .card-image{
     background-color:aqua;

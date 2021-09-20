@@ -3,6 +3,9 @@
 {% load my_tags %}
 <head>
     <link rel="stylesheet" href = '{% static "css/main.css" %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </head>
 {% block content %}
     <select name="forma" onchange="location = this.value;">
@@ -17,7 +20,7 @@
 
     <div class="title">
         <h1 id = 'snow-sensei-title'>Snow Sensei 課程資訊{% if category != None%}（{{category}}）{%endif%}</h1>
-        <h3 id = 'team'><a href="{% url 'official_use:official_home'%}" class="a-team">Team</a></h3>
+        <a style="position:relative;left:40%" href="{% url 'official_use:official_home'%}" class="btn btn-secondary">Team</a>
     </div>
     <section class = 'container'>
         <style>
@@ -31,7 +34,8 @@
         </style>
         {% for lesson in lessons %}
         {% get_filename lesson.image.url as image %}
-        <div class = "col-sm-12 col-md-6 col-lg-3 col-xl-3" style="background-color:white;height:450px;margin:10px 5px;border-radius:15px">
+        <!--以這個div當作各card背景桌布-->
+        <div class = "col-sm-12 col-md-6 col-lg-3 col-xl-3" style="background-color:white;height:450px;width: 350px;margin:10px 5px;border-radius:15px">
             <div class="">
                 <div class="bkgdImage" style = "background-image: url('../media/images/lessonimage/{{image}}');"></div>
             </div>
@@ -41,7 +45,7 @@
                 <li class="unlisted-item">時間:{{lesson.start_time}}-{{lesson.end_time.time}}</li>
                 <li class="unlisted-item">地點:{{lesson.location}}</li>
             </ul>
-            <a href = '{% url "mainpages:read_more" lesson.id %}'>READ MORE</a>
+            <a style="position:relative;left:25%;bottom:0;" href = '{% url "mainpages:read_more" lesson.id %}'>READ MORE</a>
         </div>
         {% endfor %}
     </section>

@@ -13,7 +13,7 @@ class Lesson(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     eligibility = models.CharField(max_length=500, blank=True)
-    link = models.URLField(max_length=500)
+    link = models.CharField(max_length=500)
     discription = models.TextField(max_length=2000, blank=True)
     image = models.ImageField(blank=True, null = True, upload_to= 'images/lessonimage/')
 
